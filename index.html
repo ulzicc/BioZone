@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioZone - Platform Bioteknologi Modern</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bioo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-dna me-2"></i>BioZone
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#applications">Aplikasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#technologies">Teknologi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#research">Riset</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#resources">Edukasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (replaced) -->
+    <section class="hero d-flex align-items-center">
+      <div class="container d-flex hero-inner">
+        <div class="hero-left">
+          <div class="side-nav">
+            <ul>
+              <li class="dot active"></li>
+              <li class="dot"></li>
+              <li class="dot"></li>
+            </ul>
+          </div>
+
+          <h1 class="display-4 fw-bold mb-3">Bioteknologi Untuk <br>Jawa Timur</h1>
+          <p class="lead mb-4">Temukan revolusi bioteknologi dalam kesehatan, pertanian, energi, dan lingkungan untuk masa depan yang berkelanjutan.</p>
+
+          <div class="hero-cta">
+            <a href="#applications" class="btn btn-primary btn-lg me-3">Jelajahi Aplikasi</a>
+            <a href="#resources" class="btn btn-outline-light btn-lg">Mulai Belajar</a>
+          </div>
+        </div>
+
+       <div class="hero-right" aria-hidden="true">
+          <div id="hero-video" class="hero-video" aria-live="polite">
+            <img src="footage\627cf5e19dcdbd166cf3c6394ee936-unscreen (1).gif" alt="Animasi DNA Transparan" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">Apa Itu BioZone?</h2> <!-- autoShow -->
+                    <div class="p-auto">
+                    <p>BioZone adalah platform edukasi bioteknologi yang menyediakan informasi terkini, alat, dan sumber daya untuk memahami dan menerapkan teknologi biologis dalam berbagai sektor kehidupan.</p>
+                    <p>Kami berkomitmen untuk mendemokratisasi akses terhadap pengetahuan bioteknologi dan mendorong inovasi di Indonesia terutama di <b>Jawa Timur</b>.</p>
+                    </div>
+                    <div class="d-flex mt-4">
+                        <div class="me-4">
+                            <h4 class="text-primary">50+</h4>
+                            <p>Artikel Teknis</p>
+                        </div>
+                        <div class="me-4">
+                            <h4 class="text-primary">25</h4>
+                            <p>Protokol Lab</p>
+                        </div>
+                        <div>
+                            <h4 class="text-primary">3.5K+</h4>
+                            <p>Pengguna Terdaftar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="lab-equipment">
+                        <h4 class="mb-3">Alat Laboratorium Bioteknologi</h4>
+                        <div class="row text-center">
+
+                            <div class="col-4 mb-3">
+                                <div class="floatIcon"> <i class="fas fa-microscope fa-2x text-primary mb-2"></i> </div>
+                                <p>Mikroskop</p>
+                            </div>
+                            <div class="col-4 mb-3">
+                                <div class="floatIcon"> <i class="fas fa-vial fa-2x text-primary mb-2"></i> </div>
+                                <p>PCR</p>
+                            </div>
+                            <div class="col-4 mb-3">
+                                <div class="floatIcon"><i class="fas fa-flask fa-2x text-primary mb-2"></i></div>
+                                <p>Bioreaktor</p>
+                            </div>
+                            <div class="col-4 mb-3">
+                                <div class="floatIcon"><i class="fas fa-dna fa-2x text-primary mb-2"></i></div>
+                                <p>Sequencer</p>
+                            </div>
+                            <div class="col-4 mb-3">
+                                <div class="floatIcon"><i class="fas fa-filter fa-2x text-primary mb-2"></i></div>
+                                <p>Kromatografi</p>
+                            </div>
+                            <div class="col-4 mb-3">
+                                <div class="floatIcon"><i class="fas fa-temperature-low fa-2x text-primary mb-2"></i></div>
+                                <p>Freezer -80°C</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Aplikasi Bioteknologi</h2>
+            <p class="text-center mb-5">Bioteknologi telah merevolusi berbagai bidang kehidupan modern</p>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 application-card">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h4 class="card-title">Bioteknologi Medis</h4>
+                            <p class="card-text">Pengembangan obat, terapi gen, diagnostik molekuler, dan alat kesehatan berbasis bioteknologi.</p>
+                            <div>
+                                <span class="biotech-badge">Terapi Gen</span>
+                                <span class="biotech-badge">Vaksin</span>
+                                <span class="biotech-badge">Diagnostik</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 application-card">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h4 class="card-title">Bioteknologi Pertanian</h4>
+                            <p class="card-text">Tanaman transgenik, bio-pestisida, perbaikan genetika ternak, dan kultur jaringan tanaman.</p>
+                            <div>
+                                <span class="biotech-badge">GMO</span>
+                                <span class="biotech-badge">Kultur Jaringan</span>
+                                <span class="biotech-badge">Bio-pestisida</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 application-card">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <h4 class="card-title">Bioteknologi Lingkungan</h4>
+                            <p class="card-text">Bioremediasi, pengolahan limbah, bioenergy, dan konservasi keanekaragaman hayati.</p>
+                            <div>
+                                <span class="biotech-badge">Bioremediasi</span>
+                                <span class="biotech-badge">Biofuel</span>
+                                <span class="biotech-badge">Pengolahan Limbah</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 application-card">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h4 class="card-title">Bioteknologi Industri</h4>
+                            <p class="card-text">Produksi enzim, bahan kimia khusus, biopolimer, dan proses fermentasi skala industri.</p>
+                            <div>
+                                <span class="biotech-badge">Enzim</span>
+                                <span class="biotech-badge">Fermentasi</span>
+                                <span class="biotech-badge">Biopolimer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 application-card">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h4 class="card-title">Bioinformatika</h4>
+                            <p class="card-text">Analisis data genomik, pemodelan molekuler, drug discovery, dan sistem biologi.</p>
+                            <div>
+                                <span class="biotech-badge">Genomik</span>
+                                <span class="biotech-badge">Proteomik</span>
+                                <span class="biotech-badge">Drug Discovery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 application-card">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4 class="card-title">Bioteknologi Pangan</h4>
+                            <p class="card-text">Pengawetan makanan, probiotik, fortifikasi nutrisi, dan produksi bahan pangan fungsional.</p>
+                            <div>
+                                <span class="biotech-badge">Probiotik</span>
+                                <span class="biotech-badge">Enzim Pangan</span>
+                                <span class="biotech-badge">Fortifikasi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Teknologi Bioteknologi</h2>
+            <p class="text-center mb-5">Teknologi pendukung perkembangan bioteknologi modern</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card tech-card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Rekayasa Genetika</h4>
+                            <p class="card-text">Teknologi untuk memodifikasi materi genetik organisme untuk tujuan tertentu.</p>
+                            <ul>
+                                <li>CRISPR-Cas9</li>
+                                <li>DNA Rekombinan</li>
+                                <li>RNA Interference</li>
+                                <li>Gene Therapy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card tech-card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Bioproses & Fermentasi</h4>
+                            <p class="card-text">Teknologi untuk memproduksi bahan dengan bantuan mikroorganisme atau enzim.</p>
+                            <ul>
+                                <li>Bioreaktor</li>
+                                <li>Fermentasi Skala Industri</li>
+                                <li>Pemurnian Produk</li>
+                                <li>Kontrol Proses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card tech-card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Analisis Molekuler</h4>
+                            <p class="card-text">Teknik untuk menganalisis dan memanipulasi molekul biologis.</p>
+                            <ul>
+                                <li>PCR & qPCR</li>
+                                <li>Sequencing</li>
+                                <li>Electrophoresis</li>
+                                <li>Microarrays</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card tech-card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Bioteknologi Nano</h4>
+                            <p class="card-text">Aplikasi nanoteknologi dalam bidang biologi dan kedokteran.</p>
+                            <ul>
+                                <li>Drug Delivery System</li>
+                                <li>Biosensor</li>
+                                <li>Nanomaterial Biologis</li>
+                                <li>Diagnostik Nano</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Riset Terkini</h2>
+            <p class="text-center mb-5">Temukan perkembangan terbaru dalam dunia bioteknologi</p>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card research-card news-card h-100">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Terbaru</span>
+                            <h5 class="card-title">Terapi CAR-T untuk Kanker</h5>
+                            <p class="card-text">Pengembangan terapi sel T untuk pengobatan kanker yang lebih efektif dengan efek samping minimal.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2 hari lalu</small>
+                                <a href="artikel1.html" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="card research-card news-card h-100">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Pertanian</span>
+                            <h5 class="card-title">Tanaman Tahan Kekeringan</h5>
+                            <p class="card-text">Rekayasa genetika tanaman untuk meningkatkan ketahanan terhadap kondisi kekeringan ekstrem.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">1 minggu lalu</small>
+                                <a href="artikel2.html" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="card research-card news-card h-100">
+                        <div class="card-body">
+                            <span class="badge bg-info mb-2">Lingkungan</span>
+                            <h5 class="card-title">Bakteri Pendegradasi Plastik</h5>
+                            <p class="card-text">Penemuan strain bakteri baru yang mampu mendegradasi plastik PET dalam waktu singkat.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2 minggu lalu</small>
+                                <a href="artikel3.html" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Sumber Daya Edukasi</h2>
+            <p class="text-center mb-5">Tingkatkan pengetahuan Anda dengan materi edukasi bioteknologi</p>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <i class="fas fa-book card-icon"></i>
+                            <h4>Protokol Laboratorium</h4>
+                            <p>Step-by-step protokol untuk eksperimen bioteknologi dasar dan lanjutan.</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 70%"></div>
+                            </div>
+                            <p>25 Protokol Tersedia</p>
+                            <a href="protokol.html" class="btn btn-primary">Akses Protokol</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <i class="fas fa-video card-icon"></i>
+                            <h4>Video Tutorial</h4>
+                            <p>Koleksi video tutorial teknik laboratorium dan penjelasan konsep bioteknologi.</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 55%"></div>
+                            </div>
+                            <p>5 Video Tersedia</p>
+                            <a href="video.html" class="btn btn-primary">Tonton Video</a>
+                        </div>
+                    </div>
+                </div>
+                
+               <div class="col-lg-4 mb-4">
+                   <div class="card feature-card">
+                         <div class="card-body">
+                         <i class="fas fa-puzzle-piece card-icon" style="color: var(--primary);"></i>
+                         <h4>LabSim: Perakitan Gen</h4>
+                    <p>Simulasi perakitan sekuens DNA target. Uji kecepatan dan akurasi Anda dalam rekayasa genetika!</p>
+            
+            <div class="progress">
+                <div class="progress-bar" style="width: 25%; background-color: var(--secondary);"></div>
+            </div>
+            <p class="small text-muted">3 Level Tersedia</p>
+            
+            <button href="labsim.html" id="open-labsim-btn" class="btn btn-primary" style="background-color: var(--primary); border-color: var(--biopurple);">Mulai Simulasi</button>
+        </div>
+    </div>
+</div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <h3 class="section-title text-center">Linimasa Bioteknologi</h3>
+                    <div class="timeline">
+                        <div class="autoBLur">
+                        <div class="timeline-item">
+                            <h5>1973 - DNA Rekombinan</h5>
+                            <p>Herbert Boyer dan Stanley Cohen berhasil menciptakan organisme pertama dengan DNA rekombinan.</p>
+                        </div>
+                        </div>
+                        <div class="autoBLur">
+                        <div class="timeline-item">
+                            <h5>1982 - Insulin Rekombinan</h5>
+                            <p>Insulin manusia pertama yang diproduksi oleh bakteri disetujui untuk penggunaan medis.</p>
+                        </div>
+                        </div>
+                        <div class="autoBLur">
+                        <div class="timeline-item">
+                            <h5>1990 - Proyek Genom Manusia</h5>
+                            <p>Proyek internasional untuk memetakan seluruh genom manusia dimulai.</p>
+                        </div>
+                        </div>
+                        <div class="autoBLur">
+                        <div class="timeline-item">
+                            <h5>1996 - Kloning Mamalia</h5>
+                            <p>Domba Dolly menjadi mamalia pertama yang berhasil dikloning dari sel dewasa.</p>
+                        </div>
+                        </div>
+                        <div class="autoBLur">
+                        <div class="timeline-item">
+                            <h5>2003 - Genom Manusia Selesai</h5>
+                            <p>Proyek Genom Manusia berhasil diselesaikan, memetakan 99% genom manusia.</p>
+                        </div>
+                        </div>
+                        <div class="autoBLur">
+                        <div class="timeline-item">
+                            <h5>2012 - CRISPR-Cas9</h5>
+                            <p>Teknologi editing gen CRISPR-Cas9 dipublikasikan, merevolusi rekayasa genetika.</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Hubungi Kami</h2>
+            <p class="text-center mb-5">Punya pertanyaan atau ingin berkolaborasi? Hubungi tim BioZone</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Informasi Kontak</h4>
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-map-marker-alt text-primary me-3 mt-1"></i>
+                                <p>Gedung BioZone, Jl. Raya Pulorejo, Prajuritkulon Mojokerto 61325 Jawa Timur, Indonesia</p>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-phone text-primary me-3 mt-1"></i>
+                                <p>+62 815-5058-928</p>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-envelope text-primary me-3 mt-1"></i>
+                                <p>info@biozone.id</p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-clock text-primary me-3 mt-1"></i>
+                                <p>Senin - Jumat: 09.00 - 17.00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Kirim Pesan</h4>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subjek</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="">Pilih subjek...</option>
+                                        <option value="general">Pertanyaan Umum</option>
+                                        <option value="collaboration">Kolaborasi Riset</option>
+                                        <option value="education">Edukasi & Pelatihan</option>
+                                        <option value="technical">Dukungan Teknis</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Pesan</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4><i class="fas fa-dna me-2"></i>BioZone</h4>
+                    <p>Platform edukasi bioteknologi terdepan di Indonesia untuk mendorong inovasi dan pengembangan SDM di bidang bioteknologi.</p>
+                    <div class="d-flex">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Menu</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#applications">Aplikasi</a></li>
+                        <li><a href="#technologies">Teknologi</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Layanan</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Konsultasi Teknis</a></li>
+                        <li><a href="#">Pelatihan Laboratorium</a></li>
+                        <li><a href="#">Analisis Data Bioinformatika</a></li>
+                        <li><a href="#">Review Protokol Riset</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Berlangganan Newsletter</h5>
+                    <p>Dapatkan informasi terbaru tentang perkembangan bioteknologi.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email Anda">
+                        <button class="btn btn-primary" type="button">Berlangganan</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2025 BioZone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="gene-assembly-modal" class="custom-modal-overlay" style="display: none;">
+    <div class="custom-modal-content">
+      
+        <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+            <h5 class="fw-bold"><i class="fas fa-dna me-2" style="color: var(--biopurple);"></i>LabSim: Perakitan Gen</h5>
+            <button id="close-labsim-btn" class="btn-close" type="button" aria-label="Close"></button>
+        </div>
+      
+        <div class="p-0">
+            <div id="game-intro">
+                <p class="lead text-center">Selamat datang, BioEngineer! Susun basa nitrogen target dengan cepat dan tepat.</p>
+                <h1 id="target-sequence" class="text-center my-4 fw-bolder text-dark" style="letter-spacing: 5px;">A T G C C G T A</h1>
+                <p class="text-center text-muted small">Waktu: <span id="game-timer" class="fw-bold">15</span> detik | Akurasi: <span id="game-score" class="fw-bold">0%</span></p>
+                <button id="start-game-btn" class="btn btn-primary w-100 btn-lg" style="background-color: var(--biopurple); border-color: var(--biopurple);">START LEVEL 1</button>
+            </div>
+            
+            <div id="game-area" style="display: none;">
+                <p class="text-center fw-bold text-primary mb-3">Target Sekuens Berikutnya: <span id="current-target" class="fw-bold text-danger"></span></p>
+                <div id="assembly-area" class="d-flex justify-content-center mb-4 p-3 border rounded-3 bg-light" style="min-height: 50px;">
+                    </div>
+                <div class="d-flex justify-content-center gap-2">
+                    <button class="btn btn-success dna-base" data-base="A">A</button>
+                    <button class="btn btn-danger dna-base" data-base="T">T</button>
+                    <button class="btn btn-primary dna-base" data-base="C">C</button>
+                    <button class="btn btn-warning dna-base" data-base="G">G</button>
+                </div>
+            </div>
+            
+            <div id="game-result" class="text-center mt-4" style="display: none;">
+                <h4><i class="fas fa-trophy me-2 text-warning"></i>Hasil Anda!</h4>
+                <p id="result-message" class="lead"></p>
+                <button id="close-result-btn" class="btn btn-secondary mt-3 me-2">Tutup</button>
+                <button id="next-level-btn" class="btn btn-primary mt-3" style="background-color: var(--biopurple); border-color: var(--biopurple); display: none;">Level Selanjutnya</button>
+                <button id="restart-game-btn" class="btn btn-primary mt-3" style="background-color: var(--biopurple); border-color: var(--biopurple); display: none;">Ulangi Level</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bioo.js"></script> 
+<script>
+
+</script>
+</body>
+</html>

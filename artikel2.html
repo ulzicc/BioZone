@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanaman Tahan Kekeringan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #f5f5f5;
+            min-height: max-content;
+            padding: 0px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        header {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .date {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #4a2c8d;
+            margin: 25px 0 15px;
+            font-size: 1.8rem;
+        }
+        
+        p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .btn-2 {
+            display: inline-block;
+            border: 1px black;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            padding: 12px 25px;
+            border-radius: 5px;
+            color: rgb(43, 41, 41);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            
+        }
+        
+        .btn-2:hover {
+            background: #1565c0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+            color: #4caf50;
+        }
+        
+        .back-btn-2 {
+            background: rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+            border: 1px #000000;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* glassmorphism blue box for header */
+        .header-bg{
+            background: linear-gradient(180deg, rgba(24,64,122,0.20), rgba(10,40,90,0.14));
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(10,30,60,0.25);
+            margin-top: 25px;
+            margin-bottom: 24px;
+            color: #eaf6ff;
+
+        }
+
+        .header-bg h1 {
+            color: #000000;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+        }
+
+        .header-bg .date{
+            color: rgba(24, 24, 24, 0.85);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .glass-card {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioZone - Platform Bioteknologi Modern</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bioo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-success">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">
+                <i class="fas fa-dna me-2"></i>BioZone
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#applications">Aplikasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#technologies">Teknologi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#research">Riset</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#resources">Edukasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+
+        <!-- wrap header with box background -->
+        <div class="header-bg">
+            <header>
+                <h1>Tanaman Tahan Kekeringan</h1>
+                <div class="date">2 hari lalu</div>
+                <a href="index.html" class="btn back-btn">← Kembali ke Riset Terkini</a>
+            </header>
+        </div>
+
+        <div class="glass-card">
+            <h2>Rekayasa Genetik untuk Ketahanan Pangan</h2>
+            <p>Perubahan iklim global telah meningkatkan frekuensi dan intensitas kekeringan di berbagai belahan dunia, mengancam ketahanan pangan. Untuk mengatasi tantangan ini, para ilmuwan telah mengembangkan tanaman tahan kekeringan melalui rekayasa genetika yang memungkinkan tanaman bertahan dalam kondisi kekurangan air yang ekstrem.</p>            
+            <div class="highlight">
+                <p>Tanaman tahan kekeringan hasil rekayasa genetika tidak hanya membantu menjaga produksi pangan di daerah rawan kekeringan, tetapi juga mengurangi kebutuhan irigasi, sehingga menghemat sumber daya air yang semakin langka.</p>
+            </div>
+            
+            <h2>Mekanisme Ketahanan Terhadap Kekeringan</h2>
+             <p>Tanaman tahan kekeringan dirancang dengan memanipulasi gen yang terlibat dalam berbagai mekanisme respons terhadap stres air. Beberapa pendekatan yang digunakan termasuk:</p>
+            
+            <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li style="margin-bottom: 10px;">Pengaturan gen yang mengontrol penutupan stomata untuk mengurangi penguapan air</li>
+                <li style="margin-bottom: 10px;">Peningkatan produksi osmolit protektif seperti prolin dan gula yang membantu menjaga tekanan osmotik sel</li>
+                <li style="margin-bottom: 10px;">Modifikasi sistem akar untuk meningkatkan penyerapan air dari tanah</li>
+                <li style="margin-bottom: 10px;">Peningkatan produksi protein stres yang melindungi struktur seluler dari kerusakan akibat dehidrasi</li>
+            </ul>
+            
+            <h2>Contoh Tanaman Tahan Kekeringa</h2>
+            <p>Beberapa contoh tanaman yang telah berhasil direkayasa untuk ketahanan terhadap kekeringan termasuk jagung, kedelai, kapas, dan gandum. Varietas jagung tahan kekeringan, misalnya, telah menunjukkan peningkatan hasil hingga 30% dibandingkan varietas konvensional dalam kondisi kekurangan air.
+               <br><br>Di Indonesia, penelitian tanaman pangan tahan kekeringan difokuskan pada komoditas strategis seperti padi, jagung, dan kedelai untuk mengantisipasi dampak perubahan iklim terhadap ketahanan pangan nasional.
+            </p>
+                        
+            <h2>Manfaat dan Tantangan</h2>
+            <p>Manfaat utama tanaman tahan kekeringan adalah kemampuan untuk mempertahankan produktivitas di bawah kondisi stres air, mengurangi risiko gagal panen, dan meningkatkan stabilitas pasokan pangan. Selain itu, teknologi ini dapat membantu petani di daerah marginal untuk meningkatkan pendapatan mereka.
+                <br><br>
+               Namun, pengembangan dan adopsi tanaman rekayasa genetika juga menghadapi tantangan, termasuk kekhawatiran mengenai keamanan hayati, regulasi yang ketat, serta penerimaan masyarakat. Pendidikan dan komunikasi yang efektif tentang manfaat dan keamanan teknologi ini diperlukan untuk mengatasi hambatan tersebut.</p>
+
+            <h2>Masa Depan Pertanian Berkelanjutan</h2>
+            <p>Dengan perubahan iklim yang terus berlanjut, pengembangan tanaman tahan kekeringan akan menjadi semakin penting untuk memastikan ketahanan pangan global. Penelitian di masa depan diarahkan pada pengembangan tanaman dengan ketahanan ganda terhadap berbagai stres abiotik, termasuk kekeringan, salinitas, dan suhu ekstrem.
+   <br><br>
+               Integrasi teknologi rekayasa genetika dengan praktik pertanian berkelanjutan lainnya diharapkan dapat menciptakan sistem pertanian yang lebih tangguh dan produktif di masa depan.</p>
+            <a href="https://www.moderncancerhospital.co.id/berita_rumah_sakit/6499.html" class="btn-2">Baca Selengkapnya di Sumber Asli</a>
+        </div>
+        
+        <footer>
+            <p>Artikel ini diadaptasi dari sumber eksternal untuk tujuan edukasi.</p>
+        </footer>
+    </div>
+</body>
+</html>
