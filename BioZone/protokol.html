@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BioZone - Protokol Laboratorium</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+        :root{
+            --bg:#f4f8ff;
+            --navy:#0d47a1;
+            --blue:#1976d2;
+            --ink:#0a2a43;
+            --muted:#597089;
+            --card:#ffffff;
+            --accent: linear-gradient(135deg,var(--navy),var(--blue));
+        }
+        *{box-sizing:border-box}
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            -webkit-font-smoothing:antialiased;
+        }
+        header {
+            background: linear-gradient(135deg,#0b3a91 0%, #1976d2 100%);
+            padding: 44px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 6px 24px rgba(13,71,161,0.12);
+        }
+        header h1{margin:0;font-size:2.2rem;font-weight:700;letter-spacing:0.2px}
+        header p{margin:8px 0 0;color:rgba(255,255,255,0.9)}
+        .container{max-width:1180px;margin:32px auto;padding:0 20px}
+
+        .controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+        .search{flex:1;min-width:220px;background:#fff;border-radius:12px;padding:10px 14px;display:flex;align-items:center;box-shadow:0 6px 18px rgba(12,35,64,0.06)}
+        .search input{border:0;outline:none;font-size:14px;color:var(--ink);width:100%;background:transparent}
+        .filters{display:flex;gap:10px}
+        .btn{background:var(--blue);color:white;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:600;border:0;cursor:pointer}
+
+        /* horizontal scroll layout: cards extended sideways */
+        .grid{
+            display:flex;
+            gap:18px;
+            overflow-x:auto;
+            padding-bottom:8px;
+            -webkit-overflow-scrolling:touch;
+            scroll-snap-type:x mandatory;
+            /* optional: align grid to center on large screens */
+            align-items:flex-start;
+        }
+        /* hide native scrollbar (optional) */
+        .grid::-webkit-scrollbar{height:10px}
+        .grid::-webkit-scrollbar-thumb{background:rgba(17,24,39,0.12);border-radius:8px}
+        .warn {
+            color: #5f6060;
+            margin-bottom: 5px;
+        }
+
+        .card{
+            flex:0 0 360px; /* card width — adjust as needed */
+            width:360px;
+            background:var(--card);
+            border-radius:14px;
+            padding:18px;
+            border-left:6px solid rgba(25,118,210,0.12);
+            box-shadow:0 6px 20px rgba(12,35,64,0.06);
+            transition:transform .18s,box-shadow .18s;
+            scroll-snap-align:start;
+        }
+        .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(12,35,64,0.12)}
+        .card h3{margin:0;font-size:1.05rem;color:var(--navy)}
+        .meta{display:flex;gap:10px;align-items:center;margin-top:8px;color:var(--muted);font-size:13px}
+        .section{margin-top:12px}
+        .section strong{display:inline-block;width:110px;color:#12385e}
+        .small-list{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+        .kicker{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(25,118,210,0.08);color:var(--blue);font-weight:600;font-size:12px}
+        footer{text-align:center;color:var(--muted);padding:28px 10px}
+
+        @media (max-width:640px){header h1{font-size:1.6rem}}
+    </style>
+</head>
+<body>
+<header>
+    <h1>BioZone — Protokol Laboratorium (25 Pilihan)</h1>
+    <p>Ringkas, jelas, dan siap pakai — setiap protokol sudah disusun menurut struktur ilmiah.</p>
+    <br>
+    <br>
+    <div class="warn"><p>!! Geser Kesamping Untuk Scroll !!</p></div>
+
+</header>
+
+<div class="container">
+    <div class="controls">
+        <div class="search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="margin-right:8px;opacity:.7"><path d="M21 21l-4.35-4.35" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="#1976d2" stroke-width="2"/></svg>
+            <input id="search" placeholder="Cari protokol... (mis. PCR, DNA, kultur)" />
+        </div>
+        <div class="filters">
+            <button class="btn" onclick="toggleAll()">Tampilkan Semua</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid">
+
+        <!-- CARD 1 -->
+        <article class="card" data-keywords="DNA ekstraksi genomik lisis protein alkohol">
+            <div class="kicker">1</div>
+            <h3>Ekstraksi DNA Genomik</h3>
+            <div class="meta">Tujuan: Mengisolasi DNA murni • Prinsip: Lisis sel & presipitasi</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Lysis buffer, Proteinase K, Etanol/Isopropanol, tabung mikro, pipet, centrifuge</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">(1) Lisis sampel dengan buffer & Proteinase K — (2) Inkubasi hingga homogen — (3) Tambah alkohol untuk mengendapkan DNA — (4) Centrifuge, cuci pellet, larutkan DNA</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Periksa integritas di gel agarosa dan ukur konsentrasi/kemurnian dengan spektrofotometer (A260/280).</div></div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card" data-keywords="RNA ekstraksi TRIzol RT-PCR ekspresi gen">
+            <div class="kicker">2</div>
+            <h3>Ekstraksi RNA Total (TRIzol)</h3>
+            <div class="meta">Tujuan: Mengambil RNA berkualitas • Prinsip: Pemisahan fase fenol-kloroform</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">TRIzol, Chloroform, Isopropanol, Etanol 75%, tabung RNase-free</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Homogenkan sampel di TRIzol → tambah chloroform → centrifuge → ambil fase air → presipitasi dengan isopropanol → cuci dengan etanol → larutkan dalam RNase-free water.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Ukur A260/A280 (~2.0 ideal) dan cek integritas RNA pada gel denaturasi atau Bioanalyzer.</div></div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card" data-keywords="cDNA reverse transcription RT-PCR ekspresi">
+            <div class="kicker">3</div>
+            <h3>Sintesis cDNA (Reverse Transcription)</h3>
+            <div class="meta">Tujuan: Mengonversi RNA menjadi cDNA • Prinsip: Enzim reverse transcriptase</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">RNA total, Reverse Transcriptase, primer oligo-dT atau random hexamers, dNTP, buffer</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Campur RNA & primer → inkubasi denaturing singkat → tambahkan enzim RT & buffer → inkubasi 42–50°C → inaktivasi enzim.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Uji cDNA dengan PCR target; band yang tepat menandakan sintesis sukses.</div></div>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="card" data-keywords="PCR amplifikasi primer Taq thermocycler">
+            <div class="kicker">4</div>
+            <h3>PCR (Polymerase Chain Reaction)</h3>
+            <div class="meta">Tujuan: Amplifikasi fragmen DNA • Prinsip: Siklus denaturasi-annealing-extension</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Thermocycler, Taq polymerase, primer forward/reverse, dNTP, buffer</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Siapkan master mix → tambahkan template → jalankan program temperatur sesuai primer → analisis produk di gel agarosa.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Visualisasi pita di gel: ukuran sesuai = sukses; nonspesifik/false band perlu optimasi primer atau annealing.</div></div>
+        </article>
+
+        <!-- CARD 5 -->
+        <article class="card" data-keywords="qPCR real-time kuantifikasi Ct ekspresi gen">
+            <div class="kicker">5</div>
+            <h3>qPCR (Real-Time PCR)</h3>
+            <div class="meta">Tujuan: Kuantifikasi relatif/absolut ekspresi gen • Prinsip: Pemantauan fluoresensi setiap siklus</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">qPCR master mix (SYBR/TaqMan), plate optik, primer, cDNA</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Siapkan reaksi sesuai rekomendasi pabrikan → jalankan pada mesin real-time → kumpulkan nilai Ct → lakukan duplikasi teknis.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Gunakan metode ΔΔCt untuk ekspresi relatif; periksa efisiensi primer dan kurva standar bila perlu.</div></div>
+        </article>
+
+        <!-- CARD 6 -->
+        <article class="card" data-keywords="elektroforesis gel agarosa DNA visualisasi EtBr GelRed">
+            <div class="kicker">6</div>
+            <h3>Elektroforesis Gel Agarosa</h3>
+            <div class="meta">Tujuan: Memisahkan & memvisualkan fragmen DNA/RNA • Prinsip: Migrasi berdasarkan ukuran di bawah arus listrik</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Agarosa, buffer TAE/TAE, loading dye, DNA ladder, power supply, transilluminator</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Larutkan agarosa → tuang cetakan → masukkan sampel & marker → jalankan listrik → visualisasikan pita DNA.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Band sesuai ukuran dengan ladder = sukses; smearing menunjukkan degradasi atau terlalu banyak sampel.</div></div>
+        </article>
+
+        <!-- CARD 7 -->
+        <article class="card" data-keywords="SDS-PAGE pemisahan protein gel poliacrilamid Coomassie">
+            <div class="kicker">7</div>
+            <h3>SDS-PAGE (Pemisahan Protein)</h3>
+            <div class="meta">Tujuan: Memisahkan protein berdasarkan massa molekul • Prinsip: SDS memberikan muatan negatif seragam</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Gel poliakrilamid, buffer SDS, loading buffer, marker protein, power supply</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Denaturasi sampel dengan buffer & panas → masukkan ke gel → jalankan elektroforesis → pewarnaan Coomassie atau perak.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Band jelas menunjukkan ukuran protein; banyak band = campuran atau degradasi.</div></div>
+        </article>
+
+        <!-- CARD 8 -->
+        <article class="card" data-keywords="western blot transfer antibodi deteksi HRP chemiluminescence">
+            <div class="kicker">8</div>
+            <h3>Western Blot (Deteksi Protein Spesifik)</h3>
+            <div class="meta">Tujuan: Mendeteksi & memverifikasi protein target • Prinsip: Antibodi spesifik mengikat target pada membran</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Membran PVDF/nitrocellulose, antibodi primer & sekunder, substrat HRP, blocking agent</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Transfer protein dari gel ke membran → blok nonspesifik → inkubasi antibodi primer → inkubasi antibodi sekunder → deteksi chemiluminescence.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Pita pada ukuran yang diharapkan menunjukkan keberadaan protein; band nonspesifik perlu optimasi blocking atau antibodi.</div></div>
+        </article>
+
+        <!-- CARD 9 -->
+        <article class="card" data-keywords="transformasi E.coli heat shock plasmid kompeten seleksi antibiotik">
+            <div class="kicker">9</div>
+            <h3>Transformasi Bakteri (Heat Shock)</h3>
+            <div class="meta">Tujuan: Memasukkan plasmid ke E. coli • Prinsip: Perubahan suhu meningkatkan permeabilitas membran</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Sel kompeten, plasmid DNA, water bath 42°C, LB agar + antibiotik</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Campur DNA & sel → es 30 menit → heat shock 42°C 45–60 detik → pulihkan pada media → plating pada agar selektif.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Koloni yang tumbuh pada agar selektif menunjukkan transformasi sukses.</div></div>
+        </article>
+
+        <!-- CARD 10 -->
+        <article class="card" data-keywords="elektroporasi DNA plasmid kuvette electroporator transformasi efisiensi">
+            <div class="kicker">10</div>
+            <h3>Elektroporasi</h3>
+            <div class="meta">Tujuan: Transformasi DNA efisien • Prinsip: Puls listrik membuka pori membran</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Electroporator, cuvette, sel elektrokompeten, media pemulihan</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Campur DNA & sel → masukkan ke cuvette → beri pulsa listrik → recovery → plating selektif.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Hitung efisiensi transformasi (CFU/µg DNA) dan periksa koloni.</div></div>
+        </article>
+
+        <!-- CARD 11 -->
+        <article class="card" data-keywords="kultur bakteri LB incubator shaker OD600 pertumbuhan">
+            <div class="kicker">11</div>
+            <h3>Kultur Bakteri (Cair)</h3>
+            <div class="meta">Tujuan: Memperbanyak bakteri untuk keperluan eksperimen • Prinsip: Nutrisi & aerasi mendukung pertumbuhan</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">LB broth, shaker incubator, spectrophotometer (OD600)</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Inokulasikan koloni tunggal ke media → incubate pada suhu optimal sambil menggoyang → pantau OD600.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Kurva pertumbuhan dihasilkan dari pengukuran OD; puncak log phase untuk harvesting.</div></div>
+        </article>
+
+        <!-- CARD 12 -->
+        <article class="card" data-keywords="kultur sel mamalia adherent DMEM FBS CO2 incubator passaging">
+            <div class="kicker">12</div>
+            <h3>Kultur Sel Mamalia (Adherent)</h3>
+            <div class="meta">Tujuan: Memelihara linimasa sel hewan • Prinsip: Media & lingkungan CO₂ mendukung adhesi & proliferasi</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">CO₂ incubator, DMEM/RPMI, FBS, trypsin, laminar flow</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Panaskan media → tambahkan ke flask bersih → inokulasi sel → ganti media setiap 2–3 hari → lakukan passaging jika konfluensi tinggi.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Amati morfologi & viabilitas sel dengan mikroskop; uji Trypan Blue bila perlu.</div></div>
+        </article>
+
+        <!-- CARD 13 -->
+        <article class="card" data-keywords="kultur jaringan tanaman eksplan MS auksin sitokinin sterilisasi">
+            <div class="kicker">13</div>
+            <h3>Kultur Jaringan Tanaman (Tissue Culture)</h3>
+            <div class="meta">Tujuan: Regenerasi tanaman dari eksplan • Prinsip: Hormon tumbuh di media standar (MS)</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Media MS, auksin/sitokinin, laminar flow, eksplan steril</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Sterilisasi eksplan → tanam pada media MS berisi hormon → inkubasi dengan siklus cahaya yang sesuai → subkultur untuk regenerasi.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Amati pembentukan tunas/akar dan kesehatan eksplan.</div></div>
+        </article>
+
+        <!-- CARD 14 -->
+        <article class="card" data-keywords="kloning ligasi restriksi vector PCR transformasi screening">
+            <div class="kicker">14</div>
+            <h3>Kloning Molekuler (Restriksi–Ligation)</h3>
+            <div class="meta">Tujuan: Menyisipkan fragmen DNA ke vektor • Prinsip: Pencernaan enzimatik & ligasi</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Enzim restriksi, ligase, vektor, insert, buffer enzim</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Potong insert & vektor → purifikasi fragment → ligasi → transformasi ke sel kompeten → seleksi koloni.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Konfirmasi dengan PCR kolonial, digest restriksi, atau sequencing.</div></div>
+        </article>
+
+        <!-- CARD 15 -->
+        <article class="card" data-keywords="purifikasi plasmid miniprep lisis alkali kolom silika">
+            <div class="kicker">15</div>
+            <h3>Purifikasi Plasmid (Miniprep)</h3>
+            <div class="meta">Tujuan: Mengisolasi plasmid untuk aplikasi downstream • Prinsip: Lisis alkali & pemurnian kolom</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Kit miniprep, buffer resuspensi, lisis, netralisasi, centrifuge</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Panen sel → resuspensi → lisis → netralisasi → spin column purification → elusi plasmid.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Ukur konsentrasi/plasmid integrity via gel atau NanoDrop; cek digest bila perlu.</div></div>
+        </article>
+
+        <!-- CARD 16 -->
+        <article class="card" data-keywords="sequencing sanger ddNTP capillary kromatogram verifikasi urutan">
+            <div class="kicker">16</div>
+            <h3>Sequencing DNA (Sanger)</h3>
+            <div class="meta">Tujuan: Menentukan urutan nukleotida • Prinsip: Terminasi rantai dengan ddNTP</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Kit Sanger, primer sequencing, capillary sequencer</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Siapkan reaksi dengan mix ddNTP → jalankan pada sequencer kapiler → konversi sinyal menjadi kromatogram.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Periksa chromatogram untuk panggilan basa dan kualitas; bandingkan dengan referensi.</div></div>
+        </article>
+
+        <!-- CARD 17 -->
+        <article class="card" data-keywords="crispr cas9 editing gRNA transfection HDR NHEJ verifikasi sequencing">
+            <div class="kicker">17</div>
+            <h3>CRISPR-Cas9 (Editing Gen)</h3>
+            <div class="meta">Tujuan: Mengedit locus genom spesifik • Prinsip: Cas9 dipandu gRNA memotong DNA</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Plasmid Cas9, gRNA, donor template (jika HDR), transfection reagents</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Rancang & klon gRNA → transfect ke sel target → seleksi/isolasi klon → konsultasi genotipe (PCR/sequencing).</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Verifikasi mutasi via PCR, T7E1 assay, dan sequencing; cek off-target bila perlu.</div></div>
+        </article>
+
+        <!-- CARD 18 -->
+        <article class="card" data-keywords="kultur jamur PDA SDA spora inokulasi morfologi identifikasi">
+            <div class="kicker">18</div>
+            <h3>Isolasi & Kultur Jamur</h3>
+            <div class="meta">Tujuan: Menumbuhkan dan mengidentifikasi fungi • Prinsip: Spora/fragmen tumbuh di medium padat</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">PDA/SDA, ose, incubator, plat petri</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Inokulasikan spora atau fragmen → inkubasi di suhu sesuai → amati morfologi koloni & spora.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Penilaian morfologi koloni, pewarnaan mikroskopis, atau uji molekuler untuk identifikasi spesifik.</div></div>
+        </article>
+
+        <!-- CARD 19 -->
+        <article class="card" data-keywords="fermentasi shaker flask produksi enzim metabolit aerasi pH sampling">
+            <div class="kicker">19</div>
+            <h3>Fermentasi Mikroba (Skala Lab)</h3>
+            <div class="meta">Tujuan: Produksi metabolit atau protein • Prinsip: Kultur dalam kondisi terkontrol (aerasi, pH)</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Shake flask, incubator shaker, media fermentasi, probe pH (opsional)</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Inokulasi starter culture → transfer ke flask → kontrol suhu & kecepatan goncangan → sampling berkala.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Analisis produk (HPLC, spektrofotometri) dan kurva pertumbuhan (OD).</div></div>
+        </article>
+
+        <!-- CARD 20 -->
+        <article class="card" data-keywords="assay enzim aktivitas km vmax spektrofotometri substrat">
+            <div class="kicker">20</div>
+            <h3>Enzyme Assay (Pengukuran Aktivitas)</h3>
+            <div class="meta">Tujuan: Menilai aktivitas enzim • Prinsip: Konversi substrat → produk yang terukur</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Substrat spesifik, buffer reaksi, spektrofotometer, cuvet</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Siapkan reaksi pada variasi konsentrasi substrat → ukur laju perubahan absorbansi → hitung aktivitas.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Hitung laju reaksi, Km & Vmax jika diperlukan, bandingkan dengan kontrol.</div></div>
+        </article>
+
+        <!-- CARD 21 -->
+        <article class="card" data-keywords="ELISA kuantitatif antigen antibodi plate reader TMB">
+            <div class="kicker">21</div>
+            <h3>ELISA (Enzyme-Linked Immunosorbent Assay)</h3>
+            <div class="meta">Tujuan: Kuantifikasi antigen/antibodi • Prinsip: Ikatan antigen-antibodi + deteksi enzimatik</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Plate ELISA, antibodi capture/deteksi, substrat TMB, plate reader</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Coat plate → blok → tambahkan sampel → inkubasi antibodi → tambahkan substrat → stop & baca absorbansi.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Plot kurva standar untuk kuantifikasi; periksa blank & kontrol positif/negatif.</div></div>
+        </article>
+
+        <!-- CARD 22 -->
+        <article class="card" data-keywords="dot blot protein membran PVDF antibodi deteksi cepat">
+            <div class="kicker">22</div>
+            <h3>Dot Blot (Deteksi Protein)</h3>
+            <div class="meta">Tujuan: Deteksi cepat protein tanpa SDS-PAGE • Prinsip: Sampel langsung ditanam pada membran & dideteksi oleh antibodi</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Membran PVDF, pipet, antibodi, blocking buffer, substrat deteksi</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Teteskan sampel konsentrasi berbeda → keringkan & blok → inkubasi antibodi → deteksi sinyal.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Intensitas titik berkorelasi dengan jumlah protein; cocok untuk skrining awal.</div></div>
+        </article>
+
+        <!-- CARD 23 -->
+        <article class="card" data-keywords="sterilisasi autoklaf oven steril alat media kontaminasi">
+            <div class="kicker">23</div>
+            <h3>Sterilisasi dengan Autoklaf</h3>
+            <div class="meta">Tujuan: Mensterilkan alat & media • Prinsip: Uap panas bertekanan membunuh mikroorganisme</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Autoklaf, pembungkus sterilisasi, wadah tahan panas</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Susun alat → atur siklus 121°C 15–20 menit → biarkan depressurize & dingin sebelum dibuka.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Gunakan indikator biologis/kimia untuk memastikan sterilisasi; tidak ada pertumbuhan setelah inokulasi kontrol.</div></div>
+        </article>
+
+        <!-- CARD 24 -->
+        <article class="card" data-keywords="pembuatan media LB MS DMEM sterilisasi station kultur">
+            <div class="kicker">24</div>
+            <h3>Pembuatan Media Kultur (LB / MS / DMEM)</h3>
+            <div class="meta">Tujuan: Menyediakan nutrisi untuk mikroba/sel • Prinsip: Komposisi garam, sumber karbon, vitamin</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Bahan baku media (agar, peptone, yeast extract, garam), pH meter, autoklaf</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Timbang & campur bahan kering → larutkan dalam air panas → sesuaikan pH → tambahkan agen jernih jika perlu → autoklaf media cair.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Media bening tanpa endapan atau kontaminasi; cek pH dan osmolalitas jika perlu.</div></div>
+        </article>
+
+        <!-- CARD 25 -->
+        <article class="card" data-keywords="kultur sel prokariot jamur ragi bakteri fermentasi">
+            <div class="kicker">25</div>
+            <h3>Kultur Sel Prokariot (Jamur/Ragi/Bakteri)</h3>
+            <div class="meta">Tujuan: Memperbanyak mikroba untuk studi lebih lanjut • Prinsip: Nutrisi spesifik mendukung pertumbuhan mikroba</div>
+            <div class="section"><strong>Alat & Bahan</strong><div class="small-list">Media kultur (agar slant, broth), inokulum, loop steril, autoklaf</div></div>
+            <div class="section"><strong>Langkah Kerja</strong><div class="small-list">Siapkan media dalam tabung atau cawan petri → inokulasi dengan mikroba → inkubasi pada suhu sesuai → amati pertumbuhan.</div></div>
+            <div class="section"><strong>Analisis Hasil</strong><div class="small-list">Pertumbuhan mikroba diamati sebagai koloni atau turbidity; identifikasi lebih lanjut jika diperlukan.</div></div>
+        </article>
+
+    </div>
+</div>
+
+<script>
+    const searchInput = document.getElementById('search');
+    const grid = document.getElementById('grid');
+    const cards = Array.from(grid.getElementsByClassName('card'));
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        cards.forEach(card => {
+            const keywords = card.getAttribute('data-keywords').toLowerCase();
+            if (keywords.includes(query)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+    function toggleAll() {
+        searchInput.value = '';
+        cards.forEach(card => {
+            card.style.display = 'block';
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
